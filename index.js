@@ -10,7 +10,7 @@ import helmet from "helmet";
 const app = express()
 
 app.set('view engine', 'ejs')
-
+//Best Practices securities express : https://expressjs.com/en/advanced/best-practice-security.html
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -21,6 +21,7 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(cookieParser())
+app.disable('x-powered-by')
 
 app.use(jwtVerify)
 app.use(router)
