@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT, SECRET_JWT_KEY } from "./config.js";
+import { PORT } from "./config.js";
 import cookieParser from "cookie-parser";
 import router from "./routes/login.routes.js";
 import { jwtVerify } from "./middleware/jwt.middleware.js";
