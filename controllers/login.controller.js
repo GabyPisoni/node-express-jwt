@@ -1,4 +1,4 @@
-import { UserRepository } from '../models/user-repository.js'
+import { UserRepository } from '../repository/userRepository.js'
 import { SECRET_JWT_KEY } from '../config.js'
 import jwt from 'jsonwebtoken'
 export const loginGet = (req, res) => {
