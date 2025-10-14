@@ -4,8 +4,8 @@ import cookieParser from "cookie-parser";
 import router from "./routes/login.routes.js";
 import { jwtVerify } from "./middleware/jwt.middleware.js";
 import cors from "cors";
-import morgan from "morgan";
 import helmet from "helmet";
+import { logMorganMiddleware } from "./middleware/logMorgan.middleware.js";
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(
   })
 );
 app.use(helmet());
-app.use(morgan("dev"));
+app.use(logMorganMiddleware());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
